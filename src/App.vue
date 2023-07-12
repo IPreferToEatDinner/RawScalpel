@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import Setting from '../src/components/settings/Settings.vue'
+import Setting from '@/components/settings/Settings.vue'
+import PicName from '@/components/picName/PicName.vue'
+import FileOperator from '@/components/fileOperator/FileOperator.vue'
 </script>
 
 <template>
   <el-container>
     <el-header>
-      Header content
+      <div class="left">
+        <FileOperator />
+      </div>
+      <PicName />
       <div class="right">
-        <Setting></Setting>
+        <Setting />
       </div>
     </el-header>
     <el-container>
+
       <el-aside>
-        Aside content
+        <div class="imageArea"></div>
       </el-aside>
 
       <el-main>
         Main content
       </el-main>
+
     </el-container>
   </el-container>
 </template>
@@ -28,17 +35,38 @@ import Setting from '../src/components/settings/Settings.vue'
 
   .el-header {
     display: flex;
-
+    align-items: center;
+    justify-content: space-between;
 
     height: 35px;
     background-color: rgb(106, 79, 151);
 
-    .right {}
+    .left {
+      height: inherit;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .right {
+      height: inherit;
+
+      display: flex;
+      align-items: center;
+    }
   }
 
   .el-aside {
     width: 75%;
-    background-color: lightblue;
+    background-color: #1C1B1C;
+
+    padding: 5px;
+
+    .imageArea {
+      height: 100%;
+      width: 100%;
+      background-color: #292729;
+    }
   }
 }
 </style>
