@@ -2,6 +2,7 @@
 import Setting from '@/components/settings/Settings.vue'
 import PicName from '@/components/picName/PicName.vue'
 import FileOperator from '@/components/fileOperator/FileOperator.vue'
+import ToolBar from '@/components/toolBar/ToolBar.vue'
 </script>
 
 <template>
@@ -22,9 +23,9 @@ import FileOperator from '@/components/fileOperator/FileOperator.vue'
       </el-aside>
 
       <el-main>
-        Main content
+        <div class="editArea"></div>
+        <ToolBar />
       </el-main>
-
     </el-container>
   </el-container>
 </template>
@@ -40,6 +41,7 @@ import FileOperator from '@/components/fileOperator/FileOperator.vue'
 
     height: 35px;
     background-color: rgb(106, 79, 151);
+    padding: 0 5px 0 15px;
 
     .left {
       height: inherit;
@@ -66,6 +68,18 @@ import FileOperator from '@/components/fileOperator/FileOperator.vue'
       height: 100%;
       width: 100%;
       background-color: #292729;
+    }
+  }
+
+  .el-main {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    .editArea {
+      flex-grow: 1;
+      background-color: aqua;
     }
   }
 }
